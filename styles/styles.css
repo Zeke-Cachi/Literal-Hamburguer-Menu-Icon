@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+:root {
+  --bread-orange: #E58E33;
+  --hamburguer-brown: #9C6E57;
+  --sausage-red: #DD5B27;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 80px;
+  border: 5px solid red;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.line-1, .line-2, .line-3 {
+  width: 100px;
+  margin: 5px;
+  background-color: lightgrey;
+  transition: transform 150ms;
+}
+
+.line-1 {
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  height: 15px;
+  background-color: var(--bread-orange);
+}
+
+.line-3 {
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  height: 15px;
+  background-color: var(--bread-orange);
+}
+
+.line-2 {
+  height: 12px;
+  border-radius: 10px;
+  background-color: var(--hamburguer-brown);
+}
+
+.focus .line-1 {
+  transform: rotate(45deg);
+  translate: 0px 13px;
+  width: 80px;
+  border-radius: 10px;
+  background-color: var(--sausage-red);
+}
+.focus .line-2 {
+  display: none;
+}
+.focus .line-3 {
+  transform: rotate(-45deg);
+  translate: 0px -12px;
+  width: 80px;
+  border-radius: 10px;
+  background-color: var(--sausage-red);
+}
+
+.no-display {
+  animation: fadeout 250ms forwards;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+nav {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10rem;
+  border: solid 1px red;
+  border-radius: 10px;
+}
+
+.active {
+  animation: fadein 250ms;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+li {
+  text-align: center;
+  margin: 0.1rem 0;
+}
+
+li a {
+  font-family: "Forum", cursive;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: var(--hamburguer-brown);
+}
+
+i {
+  font-family: "Font Awesome 6 Free";
+  font-size: 13px;
+}
+
+/*# sourceMappingURL=styles.css.map */
